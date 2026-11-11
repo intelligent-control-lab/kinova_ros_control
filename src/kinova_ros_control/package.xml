@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>kinova_ros_control</name>
+  <version>1.0.0</version>
+  <description>ROS1 command, feedback and bringup interface for Kinova Gen3.</description>
+  <maintainer email="yujcjerry@gmail.com">Jichuan Yu</maintainer>
+  <license>MIT</license>
+  <url type="repository">https://github.com/intelligent-control-lab/kinova_ros_control</url>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>robot_controller</depend>
+  <depend>eigen</depend>
+  <depend>spdlog</depend>
+  <exec_depend>roslaunch</exec_depend>
+  <exec_depend>realsense2_camera</exec_depend>
+  <exec_depend>compressed_image_transport</exec_depend>
+</package>

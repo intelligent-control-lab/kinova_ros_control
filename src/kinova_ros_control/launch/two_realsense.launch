@@ -1,0 +1,35 @@
+<launch>
+  <arg name="wrist_serial" default="$(optenv WRIST_CAMERA_SERIAL)"/>
+  <arg name="fixed_serial" default="$(optenv FIXED_CAMERA_SERIAL)"/>
+
+  <group ns="wrist_cam">
+    <!-- D405 color exposure is controlled by its stereo module. -->
+    <param name="camera/stereo_module/enable_auto_exposure" type="bool" value="false"/>
+    <param name="camera/stereo_module/exposure" type="int" value="30000"/>
+    <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+      <arg name="serial_no" value="$(arg wrist_serial)"/>
+      <arg name="device_type" value="d405"/>
+      <arg name="enable_color" value="true"/>
+      <arg name="enable_depth" value="false"/>
+      <arg name="color_width" value="640"/>
+      <arg name="color_height" value="480"/>
+      <arg name="color_fps" value="30"/>
+      <arg name="publish_tf" value="false"/>
+    </include>
+  </group>
+
+  <group ns="fixed_cam">
+    <param name="camera/rgb_camera/enable_auto_exposure" type="bool" value="false"/>
+    <param name="camera/rgb_camera/exposure" type="int" value="180"/>
+    <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+      <arg name="serial_no" value="$(arg fixed_serial)"/>
+      <arg name="device_type" value="d415"/>
+      <arg name="enable_color" value="true"/>
+      <arg name="enable_depth" value="false"/>
+      <arg name="color_width" value="640"/>
+      <arg name="color_height" value="480"/>
+      <arg name="color_fps" value="30"/>
+      <arg name="publish_tf" value="false"/>
+    </include>
+  </group>
+</launch>

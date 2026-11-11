@@ -1,0 +1,16 @@
+services:
+  controller:
+    image: kinova_ros_control:local
+    container_name: kinova_ros_control
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: runtime
+    network_mode: host
+    init: true
+    env_file: .env
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
+    device_cgroup_rules:
+      - "c 189:* rmw"
+    stop_grace_period: 15s

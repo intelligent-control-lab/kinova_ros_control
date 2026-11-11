@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>robot_controller</name>
+  <version>1.0.0</version>
+  <description>C++ Kinova Gen3 control library with FK, Cartesian PID, admittance and wiggling.</description>
+  <maintainer email="yujcjerry@gmail.com">Jichuan Yu</maintainer>
+  <license>MIT</license>
+  <url type="repository">https://github.com/intelligent-control-lab/kinova_ros_control</url>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>eigen</depend>
+  <depend>spdlog</depend>
+</package>

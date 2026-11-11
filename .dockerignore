@@ -1,0 +1,12 @@
+.git
+build
+devel
+install
+logs
+.catkin_tools
+third_party
+src/realsense-ros
+.env
+**/__pycache__
+**/*.bag
+**/*.bag.active

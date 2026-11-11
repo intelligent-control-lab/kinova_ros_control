@@ -1,0 +1,16 @@
+<launch>
+  <arg name="ip_address" default="$(optenv KINOVA_IP 192.168.1.10)"/>
+  <arg name="port" default="$(optenv KINOVA_PORT 10000)"/>
+  <arg name="username" default="$(optenv KINOVA_USERNAME admin)"/>
+  <arg name="password" default="$(optenv KINOVA_PASSWORD admin)"/>
+  <arg name="config_file" default="$(find kinova_ros_control)/config/kinova_cartesian_control.yaml"/>
+
+  <node name="kinova_ros_control" pkg="kinova_ros_control" type="kinova_bringup"
+        output="screen" required="true">
+    <rosparam command="load" file="$(arg config_file)"/>
+    <param name="ip_address" value="$(arg ip_address)" type="str"/>
+    <param name="port" value="$(arg port)" type="int"/>
+    <param name="username" value="$(arg username)" type="str"/>
+    <param name="password" value="$(arg password)" type="str"/>
+  </node>
+</launch>

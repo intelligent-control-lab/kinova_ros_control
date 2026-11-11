@@ -1,0 +1,12 @@
+/build/
+/devel/
+/install/
+/logs/
+/.catkin_tools/
+/src/CMakeLists.txt
+/third_party/
+/src/realsense-ros/
+*.bag
+*.bag.active
+__pycache__/
+.vscode/

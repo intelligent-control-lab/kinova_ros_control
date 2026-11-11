@@ -1,0 +1,66 @@
+# Cartesian Control Parameters for Kinova Gen3
+
+# PID parameters for each cartesian DOF
+# Format: [name, Kp, Ki, Kd]
+cartesian_pid:
+  x:
+    name: "x "
+    kp: 5.0
+    ki: 0.0
+    kd: 0.4
+  y:
+    name: "y "
+    kp: 5.0
+    ki: 0.0
+    kd: 0.4
+  z:
+    name: "z "
+    kp: 5.0
+    ki: 0.0
+    kd: 0.4
+  rx:
+    name: "rx"
+    kp: 5.0
+    ki: 0.0
+    kd: 0.4
+  ry:
+    name: "ry"
+    kp: 5.0
+    ki: 0.0
+    kd: 0.4
+  rz:
+    name: "rz"
+    kp: 5.0
+    ki: 0.0
+    kd: 0.4
+
+# Velocity limits for each cartesian DOF
+# Translation limits in m/s, rotation limits in deg/s
+vel_limits:
+  x: 0.25      # m/s
+  y: 0.25      # m/s
+  z: 0.25      # m/s
+  rx: 30.0    # deg/s
+  ry: 30.0    # deg/s
+  rz: 30.0    # deg/s
+
+admittance_control:
+  enabled: true
+  x:
+    name: "x "
+    k: 10000.0   # N/m
+    D: 1000.0      # Ns/m
+    f_dead: 20.0   # N
+    max_offset: 0.005 # m
+  y:
+    name: "y "
+    k: 10000.0   # N/m
+    D: 1000.0      # Ns/m
+    f_dead: 20.0   # N
+    max_offset: 0.005 # m
+  z:
+    name: "z "
+    k: 10000.0   # N/m
+    D: 1000.0      # Ns/m
+    f_dead: 25.0   # N
+    max_offset: 0.005 # m
